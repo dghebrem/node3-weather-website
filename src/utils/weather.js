@@ -8,6 +8,7 @@ const weather = (latitude, longitude, callback) => {
         } else if (response.body.error) {
             callback(response.body.error, undefined);
         } else {
+            console.log(response.body.currently);
             const {temperature, precipProbability} = response.body.currently;
             const {summary} = response.body.hourly;
             callback(undefined, {
